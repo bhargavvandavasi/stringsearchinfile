@@ -1,0 +1,46 @@
+          //this program is to search for a string in a file
+          //let's start our countdown
+          //no need to write package as we are in developing stage packages are useful only if we deal with projects(one contain more than one java source code files(.java files))
+import java.io.*;
+         //java.io must be imported for programs that uses files and file related operations 
+public class SearchFile
+       {
+       public static void main(String args[])
+               {
+                 try
+                 {
+                 BufferedReader bf = new BufferedReader(new FileReader("leaders.txt"));
+                 int linecount = 0;
+                 String line ;
+                 System.out.println("Searching for" + args[0] + "in file...");
+                 while(( line = bf.readline()) != null)
+                 {
+                  linecount++;
+                  int indexfound = line.indexOf(args[0]);
+                  if (indexfound > -1)
+                  {
+                  System.out.println("word was found at position" + indexfound + "on line" + linecount); 
+                  }
+                  }
+                  bf.close();
+                  }
+                  catch(IOException e)
+                  {
+                  System.out.println(""io error occured:" + e.tostring());
+                  }
+               }
+               }
+               
+               
+               
+               
+               
+       
+       
+       
+   
+       
+       
+       
+       
+       }
